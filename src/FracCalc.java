@@ -7,6 +7,9 @@ public class FracCalc {
         // TODO: Read the input from the user and call produceAnswer with an equation
         // Create a Scanner for user input
         Scanner input = new Scanner(System.in);
+        String answer = produceAnswer(input.next());
+
+        System.out.println(answer);
     }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -20,8 +23,15 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-        
-        return "";
+        String[] splited = input.split("\\s+");
+        if (splited.length != 3) {
+            throw new RuntimeException("invalid number of operands");
+        }
+        String first = splited[0];
+        String operator = splited[1];
+        String second = splited[2];
+
+        return second;
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
